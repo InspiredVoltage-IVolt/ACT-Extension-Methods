@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>ACT.Core.Extensions</RootNamespace>
+    <AssemblyName>ACTExtLib</AssemblyName>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <BaseOutputPath>D:\IVolt_Releases\ACT-Extension_Methods\Windows\</BaseOutputPath>
+    <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+    <SignAssembly>False</SignAssembly>
+    <ErrorReport>none</ErrorReport>
+    <Authors>IVolt</Authors>
+    <Description>ACT Extension Methods is a .net 6 library that contains many useful extensions to make development fun and easy.  Easy to use by adding "using ACT.Core.Extensions;" and volia you will have all the extensions you will ever need.  
+Since this is community open suggestions all code pulls are reviewed and merged when value is identified.</Description>
+    <Copyright>(c) 2021 IVolt, LLC</Copyright>
+    <PackageProjectUrl>https://www.act-net.us/applications/ExtensionLibrary/</PackageProjectUrl>
+    <PackageIcon>ACT_Common_Icon.png</PackageIcon>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>3</WarningLevel>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>3</WarningLevel>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="M:\Shared drives\Assets\IVolt_Product_Images\ACT\Extension-Methods\ACT_Common_Icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
+  </ItemGroup>
+
+</Project>
