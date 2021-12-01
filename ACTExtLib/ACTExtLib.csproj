@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <RootNamespace>ACT.Core.Extensions</RootNamespace>
     <AssemblyName>ACTExtLib</AssemblyName>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
@@ -39,7 +39,10 @@ Since this is community open suggestions all code pulls are reviewed and merged 
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
+    <PackageReference Include="System.Xml.XPath" Version="4.3.0" />
   </ItemGroup>
 
 </Project>
