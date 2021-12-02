@@ -11,12 +11,23 @@
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
     <SignAssembly>False</SignAssembly>
     <ErrorReport>none</ErrorReport>
-    <Authors>IVolt</Authors>
-    <Description>ACT Extension Methods is a .net 6 library that contains many useful extensions to make development fun and easy.  Easy to use by adding "using ACT.Core.Extensions;" and volia you will have all the extensions you will ever need.  
+    <Authors>IVolt, Darkbit, Mark Alicz</Authors>
+    <Description>ACT Extension Methods is a .Net 6, C#, Library that contains many useful extensions to make development fun and easy.  Easy to use by adding "using ACT.Core.Extensions;" and volia you will have all the extensions you will ever need.  
 Since this is community open suggestions all code pulls are reviewed and merged when value is identified.</Description>
     <Copyright>(c) 2021 IVolt, LLC</Copyright>
     <PackageProjectUrl>https://www.act-net.us/applications/ExtensionLibrary/</PackageProjectUrl>
     <PackageIcon>ACT_Common_Icon.png</PackageIcon>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>IVolt_ACT_ExtensionLibrary</PackageId>
+    <Version>2.0.2</Version>
+    <Company>Inspired Voltage</Company>
+    <Product>ACT_ExtensionLibrary</Product>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>C#; .NET 6; Extensions; Extension Library; IVolt; Mark Alicz</PackageTags>
+    <PackageReleaseNotes>Initial Release Just Getting the Package Launched as I migrate old projects into .net 6</PackageReleaseNotes>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <PackageLicenseFile>D:\IVolt_Development\ACT-Extension-Methods\ACT-Extension-Methods\ACTExtLib\ACT.txt</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -43,6 +54,13 @@ Since this is community open suggestions all code pulls are reviewed and merged 
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
     <PackageReference Include="System.Xml.XPath" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
