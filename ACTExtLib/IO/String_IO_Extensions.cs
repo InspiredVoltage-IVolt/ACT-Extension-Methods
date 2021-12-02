@@ -355,10 +355,7 @@ namespace ACT.Core.Extensions
         /// <param name="Count">Number Of Parents Up To Navigate To</param>
         /// <param name="Validate">Validate The Information - throwing and error</param>
         /// <returns>New Directory Path</returns>
-        public static string NavigateUpDirectory(
-          this string StartingDirectoryPath,
-          int Count,
-          bool Validate)
+        public static string NavigateUpDirectory(this string StartingDirectoryPath, int Count, bool Validate)
         {
             string x = !Validate || StartingDirectoryPath.DirectoryExists() ? StartingDirectoryPath.EnsureDirectoryFormat() : throw new DirectoryNotFoundException(StartingDirectoryPath);
             for (int index = 0; index <= Count; ++index)
@@ -598,5 +595,21 @@ namespace ACT.Core.Extensions
             }
             return x1;
         }
+
+        /// <summary>
+        /// Returns all Sub Directories
+        /// </summary>
+        /// <param name="x">Sub Directory To Search For</param>
+        /// <returns></returns>
+        public static List<string> GetAllSubDirectories(this string x)
+        {
+            var _tmpReturn = new List<string>();
+            if (x.DirectoryExists()) { return _tmpReturn; }
+
+            var _Returns = System.IO.Directory.GetDirectories(x, "*.dll", SearchOption.AllDirectories);
+
+            return _tmpReturn;
+        }
+
     }
 }
