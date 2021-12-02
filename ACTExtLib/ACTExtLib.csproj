@@ -26,6 +26,8 @@ Since this is community open suggestions all code pulls are reviewed and merged 
     <PackageTags>C#; .NET 6; Extensions; Extension Library; IVolt; Mark Alicz</PackageTags>
     <PackageReleaseNotes>Initial Release Just Getting the Package Launched as I migrate old projects into .net 6</PackageReleaseNotes>
     <NeutralLanguage>en-US</NeutralLanguage>
+    <PackageLicenseFile>D:\IVolt_Development\ACT-Extension-Methods\ACT-Extension-Methods\ACTExtLib\ACTLIC.txt</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
