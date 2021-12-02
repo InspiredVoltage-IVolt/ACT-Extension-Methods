@@ -4,9 +4,6 @@
     <id>IVolt_ACT_ExtensionLibrary</id>
     <version>2.0.2</version>
     <authors>IVolt, Darkbit, Mark Alicz</authors>
-    <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <license type="file">D:\IVolt_Development\ACT-Extension-Methods\ACT-Extension-Methods\ACTExtLib\ACT.txt</license>
-    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
     <icon>ACT_Common_Icon.png</icon>
     <readme>README.md</readme>
     <projectUrl>https://www.act-net.us/applications/ExtensionLibrary/</projectUrl>
