@@ -19,7 +19,7 @@ Since this is community open suggestions all code pulls are reviewed and merged 
     <PackageIcon>ACT_Common_Icon.png</PackageIcon>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>IVolt_ACT_ExtensionLibrary</PackageId>
-    <Version>2.0.2</Version>
+    <Version>2.0.3</Version>
     <Company>Inspired Voltage</Company>
     <Product>ACT_ExtensionLibrary</Product>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -50,8 +50,10 @@ Since this is community open suggestions all code pulls are reviewed and merged 
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FastExcel" Version="3.0.13" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
     <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
     <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
     <PackageReference Include="System.Xml.XPath" Version="4.3.0" />

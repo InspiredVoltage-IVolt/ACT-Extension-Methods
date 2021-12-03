@@ -5,7 +5,7 @@
   },
   "projects": {
     "D:\\IVolt_Development\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACTExtLib.csproj": {
-      "version": "2.0.2",
+      "version": "2.0.3",
       "restore": {
         "projectUniqueName": "D:\\IVolt_Development\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACTExtLib.csproj",
         "projectName": "IVolt_ACT_ExtensionLibrary",
@@ -50,6 +50,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "FastExcel": {
+              "target": "Package",
+              "version": "[3.0.13, )"
+            },
             "Microsoft.CSharp": {
               "target": "Package",
               "version": "[4.7.0, )"
@@ -57,6 +61,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.3, )"
             },
             "System.Security.Cryptography.Algorithms": {
               "target": "Package",

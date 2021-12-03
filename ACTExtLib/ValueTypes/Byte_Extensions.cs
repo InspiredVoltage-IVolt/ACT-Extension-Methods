@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace ACT.Core.Extensions
 {
@@ -16,7 +12,7 @@ namespace ACT.Core.Extensions
         /// <param name="b1">   The b1 to act on. </param>
         /// <param name="b2">   The second byte. </param>
         /// <returns>   An int. </returns>
-        public static int Combine(this byte b1, byte b2) => (int)b1 << 8 | (int)b2;
+        public static int Combine(this byte b1, byte b2) => b1 << 8 | b2;
 
         /// <summary>   A byte extension method that combine to u short. </summary>
         /// <remarks>   Mark Alicz, 12/18/2016. </remarks>
@@ -113,11 +109,14 @@ namespace ACT.Core.Extensions
                 str = str + num.ToBinaryString() + x1.ToBinaryString();
             }
             if (flag)
+            {
                 str += "PADDING";
+            }
+
             return str;
         }
 
-        public static byte Xor(this byte a, byte b) => (byte)((uint)a ^ (uint)b);
+        public static byte Xor(this byte a, byte b) => (byte)(a ^ (uint)b);
 
         /// <summary>   From binary string. </summary>
         /// <remarks>   Mark Alicz, 12/18/2016. </remarks>
@@ -130,16 +129,24 @@ namespace ACT.Core.Extensions
             string str = x;
             int num = x.Length % 8;
             if (!PadIfNeeded && (uint)num > 0U)
+            {
                 throw new Exception("Padding Is Off and String is Not divided by 8 evenly");
+            }
+
             if ((uint)num > 0U)
             {
                 for (int index = 0; index < num; ++index)
+                {
                     str = "0" + str;
+                }
             }
             int length = str.Length / 8;
             byte[] numArray = new byte[length];
             for (int index = 0; index < length; ++index)
+            {
                 numArray[index] = Convert.ToByte(str.Substring(8 * index, 8), 2);
+            }
+
             return numArray;
         }
 
@@ -158,8 +165,10 @@ namespace ACT.Core.Extensions
             List<byte> byteList = new List<byte>();
             foreach (byte num in x)
             {
-                if (num > (byte)0)
+                if (num > 0)
+                {
                     byteList.Add(num);
+                }
             }
             return byteList.ToArray();
         }
@@ -172,15 +181,26 @@ namespace ACT.Core.Extensions
         {
             int num1 = 0;
             Decimal num2 = 0M;
-            Decimal num3 = 100M / (Decimal)x.Length;
+            Decimal num3 = 100M / x.Length;
             for (int index = 0; index < x.Length && CompareTo.Length >= index; ++index)
             {
-                if ((int)x[index] == (int)CompareTo[index])
+                if (x[index] == CompareTo[index])
+                {
                     num2 += num3;
+                }
                 else
+                {
                     ++num1;
+                }
             }
             return num1 == 0 ? 100M : num2;
         }
+
+        #region Byte Array
+        /// <summary>Converts the byte[] to a unicode char[]</summary>
+        /// <param name="x"></param>
+        /// <returns></returns>
+        public static char[] ToCharArray(this byte[] x) => Encoding.Unicode.GetString(x).ToCharArray();
+        #endregion
     }
 }
