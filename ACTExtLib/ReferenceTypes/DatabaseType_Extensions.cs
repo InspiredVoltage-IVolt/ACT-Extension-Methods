@@ -1,7 +1,8 @@
 ﻿using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 
-namespace ACT.Core.Extensions.ReferenceTypes
+namespace ACT.Core.Extensions
 {
     public static class DatabaseType_Extensions
     {
@@ -294,5 +295,18 @@ namespace ACT.Core.Extensions.ReferenceTypes
             return dataTable;
         }
 
+        /// <summary>This class Supports Turning DataReaders to DataTables</summary>
+        public class InternalDataAdapter : DbDataAdapter
+        {
+            /// <summary>Convert DataReader to DataTable</summary>
+            /// <param name="Reader"></param>
+            /// <returns></returns>
+            public DataTable ConvertToDataTable(IDataReader Reader)
+            {
+                DataTable dataTable = new DataTable();
+                this.Fill(dataTable, Reader);
+                return dataTable;
+            }
+        }
     }
 }

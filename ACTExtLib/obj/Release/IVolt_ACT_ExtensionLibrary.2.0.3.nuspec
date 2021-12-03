@@ -17,8 +17,10 @@ Since this is community open suggestions all code pulls are reviewed and merged 
     <tags>C# .NET 6 Extensions Extension Library IVolt Mark Alicz</tags>
     <dependencies>
       <group targetFramework="net6.0">
+        <dependency id="FastExcel" version="3.0.13" exclude="Build,Analyzers" />
         <dependency id="Microsoft.CSharp" version="4.7.0" exclude="Build,Analyzers" />
         <dependency id="Newtonsoft.Json" version="13.0.1" exclude="Build,Analyzers" />
+        <dependency id="System.Data.SqlClient" version="4.8.3" exclude="Build,Analyzers" />
         <dependency id="System.Security.Cryptography.Algorithms" version="4.3.1" exclude="Build,Analyzers" />
         <dependency id="System.Text.RegularExpressions" version="4.3.1" exclude="Build,Analyzers" />
         <dependency id="System.Xml.XPath" version="4.3.0" exclude="Build,Analyzers" />
