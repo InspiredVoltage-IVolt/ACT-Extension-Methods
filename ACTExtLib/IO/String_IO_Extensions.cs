@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Security.AccessControl;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace ACT.Core.Extensions
 {
@@ -169,15 +170,18 @@ namespace ACT.Core.Extensions
         /// <param name="BaseDirectory"></param>
         /// <param name="data"></param>
         /// <returns></returns>
-        private static List<string> _getallfilesfrompath(string BaseDirectory, List<string> data)
+        private static List<string> _getallfilesfrompath(string BaseDirectory, List<string> data, string RegexPattern = "")
         {
-            if (!Directory.Exists(BaseDirectory.EnsureDirectoryFormat()))
-            {
-                return data;
-            }
+            Regex _Expression = null;
 
-            string[] files = Directory.GetFiles(BaseDirectory);
+            if (!RegexPattern.NullOrEmpty()) { _Expression = new Regex(RegexPattern); }
+
+            if (!Directory.Exists(BaseDirectory.EnsureDirectoryFormat())) { return data; }
+
+            var files = Directory.GetFiles(BaseDirectory).Where(x => (_Expression.IsMatch(x) || _Expression == null));
+
             data.AddRange(files);
+
             foreach (string directory in Directory.GetDirectories(BaseDirectory))
             {
                 data = String_FileIO._getallfilesfrompath(directory, data);
@@ -191,6 +195,13 @@ namespace ACT.Core.Extensions
         /// <param name="Recursive">Get Files In Sub Folders</param>
         /// <returns>List{string} All Files Found</returns>
         public static List<string> GetAllFilesFromPath(this string BaseDirectory, bool Recursive) => Recursive ? String_FileIO._getallfilesfrompath(BaseDirectory, new List<string>()) : ((IEnumerable<string>)Directory.GetFiles(BaseDirectory)).ToList<string>();
+
+        /// <summary>Get All Files From Base Directory</summary>
+        /// <param name="BaseDirectory">Base Directory</param>
+        /// <param name="FileNamePattern">This looks at the FileName only.  Use * as wildcards</param>
+        /// <param name="Recursive">Get Files In Sub Folders</param>
+        /// <returns>List{string} All Files Found</returns>
+        public static List<string> GetAllFilesFromPath(this string BaseDirectory, string RegexPattern, bool Recursive) => Recursive ? String_FileIO._getallfilesfrompath(BaseDirectory, new List<string>()) : ((IEnumerable<string>)Directory.GetFiles(BaseDirectory)).ToList<string>();
 
         /// <summary>
         /// Attempts To Delete A File.  Waits For It To Complete.  Throws Error On Lock or Other Issue.
@@ -309,13 +320,6 @@ namespace ACT.Core.Extensions
         /// <returns>
         /// </returns>
         public static Stream ToStream([NotNull] this string str) => new MemoryStream(Encoding.ASCII.GetBytes(str));
-
-        /// <summary>
-        /// Determines whether [is image name] [the specified input string].
-        /// </summary>
-        /// <param name="inputString">The input string.</param>
-        /// <returns>Returns if the String is a Image Name</returns>
-        public static bool IsImageName(this string inputString) => inputString.EndsWith("png", StringComparison.InvariantCultureIgnoreCase) || inputString.EndsWith("gif", StringComparison.InvariantCultureIgnoreCase) || inputString.EndsWith("jpeg", StringComparison.InvariantCultureIgnoreCase) || inputString.EndsWith("jpg", StringComparison.InvariantCultureIgnoreCase) || inputString.EndsWith("bmp", StringComparison.InvariantCultureIgnoreCase) || inputString.EndsWith("tiff", StringComparison.InvariantCultureIgnoreCase) || inputString.EndsWith("tif", StringComparison.InvariantCultureIgnoreCase);
 
         /// <summary>Gets A File Name From A Full Path Name</summary>
         /// <param name="x">full Path</param>

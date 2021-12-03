@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Data;
 using System.Globalization;
+using System.Security;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
@@ -10,8 +11,6 @@ namespace ACT.Core.Extensions
 {
     public static class String_Extensions
     {
-
-
         /// <summary>
         /// Searches the string X for any instance of the List of Strings
         /// </summary>
@@ -836,5 +835,655 @@ namespace ACT.Core.Extensions
             }
             return !flag ? SCRIPTNAME : x.TrimEnd("/");
         }
+
+        /// <summary>
+        /// Determines whether [is image name] [the specified input string].
+        /// </summary>
+        /// <param name="inputString">The input string.</param>
+        /// <returns>Returns if the String is a Image Name</returns>
+        public static bool FileNameIsImage(this string inputString)
+        {
+            bool _tmpReturn = false;
+            foreach (string fileType in Constants.FileFormat_Standards.ImageFileTypes)
+            {
+                if (inputString.EndsWith(fileType, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    _tmpReturn = true;
+                    return _tmpReturn;
+                }
+            }
+
+            return _tmpReturn;
+        }
+
+        public static string About()
+        {
+            return "This Contains Basic String Extensions To Make Your Life Easier.";
+        }
+    }
+
+    public static class String_Extensions_Two
+    {
+
+        internal static bool invalid;
+
+        /// <summary>
+        /// Extends Basic Regex Domain String Searches.
+        /// </summary>
+        /// <param name="match"></param>
+        /// <returns></returns>
+        private static string DomainMapper(Match match)
+        {
+            IdnMapping idnMapping = new IdnMapping();
+            string ascii = match.Groups[2].Value;
+            try
+            {
+                ascii = idnMapping.GetAscii(ascii);
+            }
+            catch (ArgumentException ex)
+            {
+                invalid = true;
+            }
+            return match.Groups[1].Value + ascii;
+        }
+
+        /// <summary>Parse HTTP URL</summary>
+        /// <param name="URL"></param>
+        /// <returns></returns>
+        public static List<string> ParseHTTP_URL(this string URL)
+        {
+            List<string> stringList = new List<string>();
+            if (URL.Contains("http://"))
+            {
+                stringList.Add("http");
+            }
+            else if (URL.Contains("https://"))
+            {
+                stringList.Add("https");
+            }
+            else
+            {
+                stringList.Add("unknown");
+            }
+
+            string[] strArray = URL.Replace("http://", "").Replace("https://", "").SplitString("/", StringSplitOptions.RemoveEmptyEntries);
+            string str1 = strArray[0];
+            string str2 = str1.Substring(str1.LastIndexOf("."));
+            string str3 = str1.Substring(0, str1.LastIndexOf("."));
+            string str4 = str2.Replace(".", "");
+            string str5 = "";
+            string str6 = !str3.Contains(".") ? str3 : str3.Substring(str3.LastIndexOf(".")).Replace(".", "");
+            if (str3.Length > 0)
+            {
+                str5 = str3.Substring(0, str3.LastIndexOf("."));
+            }
+
+            stringList.Add(str5);
+            stringList.Add(str6);
+            stringList.Add(str4);
+            for (int index = 1; index < ((IEnumerable<string>)strArray).Count<string>(); ++index)
+            {
+                stringList.Add(strArray[index]);
+            }
+
+            return stringList;
+        }
+
+        public static string AddSpacesToSentence(this string text, bool preserveAcronyms)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                return string.Empty;
+            }
+
+            StringBuilder stringBuilder = new StringBuilder(text.Length * 2);
+            stringBuilder.Append(text[0]);
+            for (int index = 1; index < text.Length; ++index)
+            {
+                if (char.IsUpper(text[index]) && (text[index - 1] != ' ' && !char.IsUpper(text[index - 1]) || preserveAcronyms && char.IsUpper(text[index - 1]) && index < text.Length - 1 && !char.IsUpper(text[index + 1])))
+                {
+                    stringBuilder.Append(' ');
+                }
+
+                stringBuilder.Append(text[index]);
+            }
+            return stringBuilder.ToString();
+        }
+
+        /// <summary>Compute the distance between two strings.</summary>
+        public static int ComputeStringDifference(this string s, string t)
+        {
+            int length1 = s.Length;
+            int length2 = t.Length;
+            int[,] numArray = new int[length1 + 1, length2 + 1];
+            if (length1 == 0)
+            {
+                return length2;
+            }
+
+            if (length2 == 0)
+            {
+                return length1;
+            }
+
+            int index1 = 0;
+            while (index1 <= length1)
+            {
+                numArray[index1, 0] = index1++;
+            }
+
+            int index2 = 0;
+            while (index2 <= length2)
+            {
+                numArray[0, index2] = index2++;
+            }
+
+            for (int index3 = 1; index3 <= length1; ++index3)
+            {
+                for (int index4 = 1; index4 <= length2; ++index4)
+                {
+                    int num = t[index4 - 1] == s[index3 - 1] ? 0 : 1;
+                    numArray[index3, index4] = Math.Min(Math.Min(numArray[index3 - 1, index4] + 1, numArray[index3, index4 - 1] + 1), numArray[index3 - 1, index4 - 1] + num);
+                }
+            }
+            return numArray[length1, length2];
+        }
+
+        /// <summary>
+        /// Converts a string to a Useless SecureString.
+        /// </summary>
+        /// <param name="x">string you want to convert</param>
+        /// <returns><see cref="System.Security.SecureString"/>SecureString Ugh</returns>
+        public static SecureString ToSecureString(this string x)
+        {
+            SecureString secureString = new SecureString();
+            foreach (char c in x)
+            {
+                secureString.AppendChar(c);
+            }
+
+            return secureString;
+        }
+
+        /// <summary>Checks the string for a valid Phone Number Format</summary>
+        /// <param name="Phone">string to test</param>
+        /// <returns>bool:true or false</returns>
+        public static bool IsValidPhoneNumber(this string Phone) => new Regex("\\(?\\d{3}\\)?-? *\\d{3}-? *-?\\d{4}").Matches(Phone).Count > 0;
+
+        /// <summary>Checks for a Valid Email</summary>
+        /// <param name="strIn">string to test</param>
+        /// <returns>bool:true or false</returns>
+        public static bool IsValidEmail(this string strIn)
+        {
+            invalid = false;
+            if (string.IsNullOrEmpty(strIn))
+            {
+                return false;
+            }
+
+            strIn = Regex.Replace(strIn, "(@)(.+)$", new MatchEvaluator(DomainMapper));
+            return !invalid && Regex.IsMatch(strIn, "^(?(\")(\"[^\"]+?\"@)|(([0-9a-z]((\\.(?!\\.))|[-!#\\$%&'\\*\\+/=\\?\\^`\\{\\}\\|~\\w])*)(?<=[0-9a-z])@))(?(\\[)(\\[(\\d{1,3}\\.){3}\\d{1,3}\\])|(([0-9a-z][-\\w]*[0-9a-z]*\\.)+[a-z0-9]{2,17}))$", RegexOptions.IgnoreCase);
+        }
+
+        /// <summary>Checks for Password Complexity</summary>
+        /// <param name="pwd">Self Ref Password To check</param>
+        /// <param name="minLength">Default 8</param>
+        /// <param name="numUpper">Upper Case Count - Default 1</param>
+        /// <param name="numLower">Lower Case Count - Default 1</param>
+        /// <param name="numNumbers">Number Count - Default 0</param>
+        /// <param name="numSpecial">Special Character Count - Default 1</param>
+        /// <returns>bool:true or false</returns>
+        public static bool IsComplex(this string pwd, int minLength = 8, int numUpper = 1, int numLower = 1, int numNumbers = 0, int numSpecial = 1)
+        {
+            Regex regex1 = new Regex("[A-Z]");
+            Regex regex2 = new Regex("[a-z]");
+            Regex regex3 = new Regex("[0-9]");
+            Regex regex4 = new Regex("[^a-zA-Z0-9]");
+            return pwd.Length >= minLength && regex1.Matches(pwd).Count >= numUpper && regex2.Matches(pwd).Count >= numLower && regex3.Matches(pwd).Count >= numNumbers && regex4.Matches(pwd).Count >= numSpecial;
+        }
+
+        /// <summary>
+        ///     Converts a string to an escaped JavaString string.
+        /// </summary>
+        /// <param name="str">The string.</param>
+        /// <returns>The JS string.</returns>
+        public static string ToJsString(this string str)
+        {
+            if (!str.IsSet()) { return str; }
+
+            str = str.Replace("\\", "\\\\");
+            str = str.Replace("'", "\\'");
+            str = str.Replace("\r", "\\r");
+            str = str.Replace("\n", "\\n");
+            str = str.Replace("\"", "\\\"");
+            return str;
+        }
+
+        /// <summary>
+        ///     Function to check a max word length, used i.e. in topic names.
+        /// </summary>
+        /// <param name="text">The raw string to format</param>
+        /// <param name="maxWordLength">The max Word Length.</param>
+        /// <returns>The formatted string</returns>
+        public static bool AreAnyWordsOverMaxLength(this string text, int maxWordLength)
+        {
+            if (maxWordLength <= 0 || text.Length <= 0)
+            {
+                return false;
+            }
+
+            return ((IEnumerable<string>)text.Split(' ')).Where<string>(w => w.IsSet() && w.Length > maxWordLength).Any<string>();
+        }
+
+        /// <summary>
+        ///     Function to remove words in a string based on a max string length, used i.e. in search.
+        /// </summary>
+        /// <param name="text">The raw string to format</param>
+        /// <param name="maxStringLength">The max string length.</param>
+        /// <returns>The formatted string</returns>
+        public static string TrimWordsOverMaxLengthWordsPreserved(this string text, int maxStringLength)
+        {
+            string str1 = string.Empty;
+            if (maxStringLength <= 0 || text.Length <= 0)
+            {
+                return str1.Trim();
+            }
+
+            string[] strArray = text.Trim().Split(' ');
+            int num1 = 0;
+            int num2 = 0;
+            foreach (string str2 in strArray)
+            {
+                num1 += str2.Length;
+                if (num1 > maxStringLength)
+                {
+                    if (num2 == 0)
+                    {
+                        str1 = string.Empty;
+                        break;
+                    }
+                    break;
+                }
+                ++num2;
+                str1 = str1 + " " + str2;
+            }
+            return str1.Trim();
+        }
+
+        /// <summary>Fast index of.</summary>
+        /// <param name="source">The source.</param>
+        /// <param name="pattern">The pattern.</param>
+        /// <returns>The fast index of.</returns>
+        public static int FastIndexOf(this string source, string pattern)
+        {
+            if (pattern.Length == 0)
+            {
+                return 0;
+            }
+
+            if (pattern.Length == 1)
+            {
+                return source.IndexOf(pattern[0]);
+            }
+
+            int count = source.Length - pattern.Length + 1;
+            if (count < 1)
+            {
+                return -1;
+            }
+
+            char ch1 = pattern[0];
+            char ch2 = pattern[1];
+            int num1 = source.IndexOf(ch1, 0, count);
+            while (num1 != -1)
+            {
+                if (source[num1 + 1] != ch2)
+                {
+                    int num2;
+                    num1 = source.IndexOf(ch1, num2 = num1 + 1, count - num2);
+                }
+                else
+                {
+                    bool flag = true;
+                    for (int index = 2; index < pattern.Length; ++index)
+                    {
+                        if (source[num1 + index] != pattern[index])
+                        {
+                            flag = false;
+                            break;
+                        }
+                    }
+                    if (flag)
+                    {
+                        return num1;
+                    }
+
+                    int num3;
+                    num1 = source.IndexOf(ch1, num3 = num1 + 1, count - num3);
+                }
+            }
+            return -1;
+        }
+
+        /// <summary>
+        ///     Does an action for each character in the input string. Kind of useless, but in a
+        ///     useful way. ;)
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <param name="forEachAction">For each action.</param>
+        public static void ForEachChar(this string input, Action<char> forEachAction)
+        {
+            foreach (char ch in input)
+            {
+                forEachAction(ch);
+            }
+        }
+
+        /// <summary>Formats a string with the provided parameters</summary>
+        /// <param name="s">The s.</param>
+        /// <param name="args">The args.</param>
+        /// <returns>The formatted string</returns>
+        public static string FormatWith(this string s, params object[] args) => s.IsNotSet() ? null : string.Format(s, args);
+
+        /// <summary>Removes empty strings from the list</summary>
+        /// <param name="inputList">The input list.</param>
+        /// <returns></returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="inputList" /> is <c>null</c>.</exception>
+
+        public static List<string> GetNewNoEmptyStrings(this IEnumerable<string> inputList) => inputList.Where<string>(x => x.IsSet()).ToList<string>();
+
+        /// <summary>
+        ///     Removes strings that are smaller then <paramref name="minSize" />
+        /// </summary>
+        /// <param name="inputList">The input list.</param>
+        /// <param name="minSize">The minimum size.</param>
+        /// <returns></returns>
+
+        public static List<string> GetNewNoSmallStrings(
+           this IEnumerable<string> inputList,
+          int minSize)
+        {
+            return inputList.Where<string>(x => x.Length >= minSize).ToList<string>();
+        }
+
+        /// <summary>
+        ///     When the string is trimmed, is it <see langword="null" /> or empty?
+        /// </summary>
+        /// <param name="inputString">The input string.</param>
+        /// <returns>
+        ///     The is <see langword="null" /> or empty trimmed.
+        /// </returns>
+        public static bool IsNotSet(this string inputString) => string.IsNullOrWhiteSpace(inputString);
+
+        /// <summary>
+        ///     When the string is trimmed, is it <see langword="null" /> or empty?
+        /// </summary>
+        /// <param name="inputString">The input string.</param>
+        /// <returns>
+        ///     The is <see langword="null" /> or empty trimmed.
+        /// </returns>
+        public static bool IsSet(this string inputString) => !string.IsNullOrWhiteSpace(inputString);
+
+        /// <summary>
+        ///     Removes multiple single quote ' characters from a string.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <returns>The remove multiple single quotes.</returns>
+        public static string RemoveMultipleSingleQuotes(this string text)
+        {
+            string empty = string.Empty;
+            return text.IsNotSet() ? empty : new Regex("\\'").Replace(text, "'");
+        }
+
+        /// <summary>
+        ///     Removes multiple whitespace characters from a string.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <returns>The remove multiple whitespace.</returns>
+        public static string RemoveMultipleWhitespace(this string text)
+        {
+            string empty = string.Empty;
+            return text.IsNotSet() ? empty : new Regex("\\s+").Replace(text, " ");
+        }
+
+        /// <summary>
+        ///     Converts a string into it's hexadecimal representation.
+        /// </summary>
+        /// <param name="inputString">The input string.</param>
+        /// <returns>The string to hex bytes.</returns>
+        public static string StringToHexBytes(this string inputString)
+        {
+            string empty = string.Empty;
+            if (inputString.IsNotSet()) { return empty; }
+
+            StringBuilder stringBuilder = new StringBuilder();
+
+            foreach (byte num in inputString.ToBytes())
+            {
+                stringBuilder.Append(num.ToString("x2").ToLower());
+            }
+
+            return stringBuilder.ToString();
+        }
+
+        /// <summary>Converts a string to a list using delimiter.</summary>
+        /// <param name="str">starting string</param>
+        /// <param name="delimiter">value that delineates the string</param>
+        /// <returns>list of strings</returns>
+        public static List<string> StringToList(this string str, char delimiter) => str.StringToList(delimiter, new List<string>());
+
+        /// <summary>Converts a string to a list using delimiter.</summary>
+        /// <param name="str">starting string</param>
+        /// <param name="delimiter">value that delineates the string</param>
+        /// <param name="exclude">items to exclude from list</param>
+        /// <returns>list of strings</returns>
+
+        public static List<string> StringToList(
+           this string str,
+          char delimiter,
+           List<string> exclude)
+        {
+            List<string> list = ((IEnumerable<string>)str.Split(delimiter)).ToList<string>();
+            list.RemoveAll(new Predicate<string>(exclude.Contains));
+            list.Remove(delimiter.ToString());
+            return list;
+        }
+
+        /// <summary>
+        ///     Creates a delimited string an enumerable list of T.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="objList">The object list.</param>
+        /// <param name="delimiter">The delimiter.</param>
+        /// <returns>The list to string.</returns>
+        /// <exception cref="T:System.ArgumentNullException">objList;objList is null.</exception>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="objList" /> is <c>null</c>.</exception>
+        public static string ToDelimitedString<T>(this IEnumerable<T> objList, string delimiter) where T : IConvertible
+        {
+            if (objList == null)
+            {
+                throw new ArgumentNullException(nameof(objList), "objList is null.");
+            }
+
+            StringBuilder sb = new StringBuilder();
+            objList.ForEachFirst<T>((x, isFirst) =>
+            {
+                if (!isFirst)
+                {
+                    sb.Append(delimiter);
+                }
+
+                sb.Append(x);
+            });
+            return sb.ToString();
+        }
+
+        public static string ToJsonArray(this List<string> objList)
+        {
+            string x = "[ ";
+            foreach (string str in objList)
+            {
+                x = x + "\"" + str + "\", ";
+            }
+
+            return x.TrimEnd(",") + "]";
+        }
+
+        /// <summary>
+        ///     Cleans a string into a proper RegEx statement.
+        ///     E.g. "[b]Whatever[/b]" will be converted to:
+        ///     "\[b\]Whatever\[\/b\]"
+        /// </summary>
+        /// <param name="input">
+        /// </param>
+        /// <returns>The to reg ex string.</returns>
+
+        public static string ToRegExString(this string input)
+        {
+            StringBuilder sb = new StringBuilder();
+            input.ForEachChar(c =>
+            {
+                if (!char.IsWhiteSpace(c) && !char.IsLetterOrDigit(c) && c != '_')
+                {
+                    sb.Append("\\");
+                }
+
+                sb.Append(c);
+            });
+            return sb.ToString();
+        }
+
+        public static bool CheckPasswordLength(this string Password)
+        {
+            int num;
+            switch (Password)
+            {
+                case "":
+                case null:
+                    num = 1;
+                    break;
+                default:
+                    num = Password.Length < 3 ? 1 : 0;
+                    break;
+            }
+            return num == 0;
+        }
+
+        /// <summary>
+        ///     Truncates a string with the specified limits and adds (...) to the end if truncated
+        /// </summary>
+        /// <param name="input">input string</param>
+        /// <param name="limit">max size of string</param>
+        /// <returns>truncated string</returns>
+        public static string Truncate(this string input, int inputLimit, string cutOfString = "...")
+        {
+            string str1 = input;
+            if (input.IsNotSet())
+            {
+                return null;
+            }
+
+            int length1 = inputLimit - cutOfString.Length;
+            if (str1.Length > length1 && length1 > 0)
+            {
+                string str2 = str1.Substring(0, length1);
+                if (input.Substring(str2.Length, 1) != " ")
+                {
+                    int length2 = str2.LastIndexOf(" ");
+                    if (length2 != -1)
+                    {
+                        str2 = str2.Substring(0, length2);
+                    }
+                }
+                str1 = str2 + cutOfString;
+            }
+            return str1;
+        }
+
+        /// <summary>
+        ///     Truncates a string with the specified limits by adding (...) to the middle
+        /// </summary>
+        /// <param name="input">input string</param>
+        /// <param name="limit">max size of string</param>
+        /// <returns>truncated string</returns>
+        public static string TruncateMiddle(this string input, int limit)
+        {
+            if (input.IsNotSet())
+            {
+                return null;
+            }
+
+            string str = input;
+            if (str.Length > limit && limit > 0)
+            {
+                int length1 = limit / 2 - "...".Length / 2;
+                int length2 = limit - length1 - "...".Length / 2;
+                if (length1 + length2 + "...".Length < limit)
+                {
+                    ++length2;
+                }
+                else if (length1 + length2 + "...".Length > limit)
+                {
+                    --length2;
+                }
+
+                str = input.Substring(0, length1) + "..." + input.Substring(input.Length - length2, length2);
+            }
+            return str;
+        }
+
+        /// <summary>Convert a input string to a byte array</summary>
+        /// <param name="value">Input string.</param>
+        /// <returns>The Byte String</returns>
+        public static byte[] ToBytes(this string value) => Encoding.UTF8.GetBytes(value);
+
+        public static byte[] ToByteArrayFromBinaryString(this string x) => Byte.FromBinaryString(x);
+
+        /// <summary>
+        ///     A string extension method that initializes this object from the given from a ct string.
+        /// </summary>
+        /// <remarks>   Mark Alicz, 12/18/2016. </remarks>
+        /// <param name="x">    . </param>
+        /// <returns>   A byte[]. </returns>
+        public static byte[] FromACTString(this string x)
+        {
+            bool flag = false;
+            string str = x;
+            if (x.EndsWith("HASPADDING"))
+            {
+                flag = true;
+                str.Substring(0, str.Length - 10);
+            }
+            byte[] fromBinaryString = x.ToByteArrayFromBinaryString();
+            List<byte> byteList = new List<byte>();
+            for (int index = 0; index < fromBinaryString.Length; index += 2)
+            {
+                byte a = fromBinaryString[index];
+                byte b = fromBinaryString[index];
+                byte num = a.Xor(b);
+                byteList.Add(a);
+                byteList.Add(num);
+            }
+            if (flag)
+            {
+                byteList.RemoveAt(byteList.Count - 1);
+            }
+
+            return byteList.ToArray();
+        }
+
+        /// <summary>Generates The Stream From a String</summary>
+        /// <param name="s">String To Convert To A Stream</param>
+        /// <returns>Stream</returns>
+        public static Stream GenerateStreamFromString(this string s)
+        {
+            MemoryStream memoryStream = new MemoryStream();
+            StreamWriter streamWriter = new StreamWriter(memoryStream);
+            streamWriter.Write(s);
+            streamWriter.Flush();
+            memoryStream.Position = 0L;
+            return memoryStream;
+        }
+
     }
 }
