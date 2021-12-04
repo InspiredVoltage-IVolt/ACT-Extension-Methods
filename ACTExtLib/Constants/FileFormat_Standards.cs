@@ -1,4 +1,4 @@
-﻿namespace ACT.Core.Extensions.Constants
+﻿namespace ACT.Core.Constants
 {
     public static class FileFormat_Standards
     {

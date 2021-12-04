@@ -201,6 +201,11 @@ namespace ACT.Core.Extensions
         /// <param name="x"></param>
         /// <returns></returns>
         public static char[] ToCharArray(this byte[] x) => Encoding.Unicode.GetString(x).ToCharArray();
+
+        /// <summary>Converts a byte array to a string</summary>
+        /// <param name="bytes">the byte array</param>
+        /// <returns>The string</returns>
+        public static string ToBase64String(this byte[] bytes) => Convert.ToBase64String(bytes);
         #endregion
     }
 }

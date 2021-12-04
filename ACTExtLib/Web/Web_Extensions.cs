@@ -1,6 +1,7 @@
-﻿using System.Net;
+﻿using System.Collections.Specialized;
+using System.Net;
 
-namespace ACT.Core.Extensions
+namespace ACT.Core.Extensions.Web
 {
     public static class Web_Extensions
     {
@@ -20,6 +21,18 @@ namespace ACT.Core.Extensions
             var _Results = await httpClient.GetStringAsync(URL);
 
             return _Results.ToString(true);
+        }
+
+
+        public static string CombineQuerystringToString(this NameValueCollection QueryString)
+        {
+            string x = "";
+            foreach (object key in QueryString.Keys)
+            {
+                x = x + key + "=" + QueryString[key.ToString()] + "&";
+            }
+
+            return x.TrimEnd("&");
         }
 
     }

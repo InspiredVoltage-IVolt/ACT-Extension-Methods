@@ -2,6 +2,23 @@
 {
     public static class EnumerableExtensions
     {
+        /// <summary>
+        /// Pic a Random Item from the Enumerable
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="v"></param>
+        /// <returns></returns>
+        public static T PickRandom<T>(this IEnumerable<T> source, int v = 1) => source.PickRandom(v);
+
+        /// <summary>
+        /// Shuffle The Contents of the Object
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> source) => source.OrderBy<T, Guid>(x => Guid.NewGuid());
+
         /// <summary>Iterates through a generic list type</summary>
         /// <typeparam name="T"> </typeparam>
         /// <param name="list"> </param>

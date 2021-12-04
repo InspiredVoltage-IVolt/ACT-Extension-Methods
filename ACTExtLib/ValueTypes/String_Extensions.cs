@@ -844,7 +844,7 @@ namespace ACT.Core.Extensions
         public static bool FileNameIsImage(this string inputString)
         {
             bool _tmpReturn = false;
-            foreach (string fileType in Constants.FileFormat_Standards.ImageFileTypes)
+            foreach (string fileType in ACT.Core.Constants.FileFormat_Standards.ImageFileTypes)
             {
                 if (inputString.EndsWith(fileType, StringComparison.CurrentCultureIgnoreCase))
                 {
@@ -885,6 +885,32 @@ namespace ACT.Core.Extensions
                 invalid = true;
             }
             return match.Groups[1].Value + ascii;
+        }
+
+        /// <summary>Parse Out the String</summary>
+        /// <param name="DelimitedString"></param>
+        /// <param name="ElementPosition"></param>
+        /// <param name="Delimiter"></param>
+        /// <returns></returns>
+        public static string ParseOutString(
+          this string DelimitedString,
+          int ElementPosition,
+          string Delimiter = ",",
+          bool Trim = true,
+          string ErrorString = "")
+        {
+            if (Delimiter.NullOrEmpty())
+            {
+                return ErrorString;
+            }
+
+            string[] strArray = DelimitedString.SplitString(Delimiter, StringSplitOptions.RemoveEmptyEntries);
+            if (strArray.Length <= ElementPosition)
+            {
+                return ErrorString;
+            }
+
+            return Trim ? strArray[ElementPosition].Trim() : strArray[ElementPosition].Trim();
         }
 
         /// <summary>Parse HTTP URL</summary>

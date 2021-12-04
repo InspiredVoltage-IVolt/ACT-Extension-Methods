@@ -5,7 +5,7 @@
   },
   "projects": {
     "D:\\IVolt_Development\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACTExtLib.csproj": {
-      "version": "2.0.3",
+      "version": "2.0.5",
       "restore": {
         "projectUniqueName": "D:\\IVolt_Development\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACTExtLib.csproj",
         "projectName": "IVolt_ACT_ExtensionLibrary",
@@ -65,6 +65,10 @@
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.3, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             },
             "System.Security.Cryptography.Algorithms": {
               "target": "Package",

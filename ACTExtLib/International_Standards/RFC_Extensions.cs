@@ -1,4 +1,4 @@
-﻿using ACT.Core.Extensions.Constants;
+﻿using ACT.Core.Constants;
 using System.Text;
 
 namespace ACT.Core.Extensions
