@@ -28,5 +28,7 @@
         public static readonly string MobilePhoneNumber = "^((\\+){0,1}91(\\s){0,1}(\\-){0,1}(\\s){0,1}){0,1}9[0-9](\\s){0,1}(\\-){0,1}(\\s){0,1}[1-9]{1}[0-9]{7}$";
         /// <summary>Roman Numerals</summary>
         public static readonly string RomanNumerals = "^(?i:(?=[MDCLXVI])((M{0,3})((C[DM])|(D?C{0,3}))?((X[LC])|(L?XX{0,2})|L)?((I[VX])|(V?(II{0,2}))|V)?))$";
+
+        public static readonly string MatchFileType_TEMPLATE = "([a-zA-Z0-9\\s_\\\\.\\-\\(\\):])+(###EXTENSION###)$";
     }
 }

@@ -7,3 +7,4 @@ D:\IVolt_Development\ACT-Extension-Methods\ACT-Extension-Methods\ACTExtLib\obj\R
 D:\IVolt_Development\ACT-Extension-Methods\ACT-Extension-Methods\ACTExtLib\obj\Release\net6.0\ACTExtLib.csproj.CoreCompileInputs.cache
 D:\IVolt_Development\ACT-Extension-Methods\ACT-Extension-Methods\ACTExtLib\obj\Release\net6.0\ACTExtLib.dll
 D:\IVolt_Development\ACT-Extension-Methods\ACT-Extension-Methods\ACTExtLib\obj\Release\net6.0\ACTExtLib.pdb
+D:\IVolt_Development\ACT-Extension-Methods\ACT-Extension-Methods\ACTExtLib\obj\Release\net6.0\ACTExtLib.csproj.AssemblyReference.cache
