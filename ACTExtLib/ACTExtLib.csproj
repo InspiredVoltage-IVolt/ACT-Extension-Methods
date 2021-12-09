@@ -27,7 +27,7 @@ Since this is community open suggestions all code pulls are reviewed and merged 
     <PackageReleaseNotes>Initial Release Just Getting the Package Launched as I migrate old projects into .net 6</PackageReleaseNotes>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <PackageLicenseExpression>  GPL-3.0-only</PackageLicenseExpression>
+    <PackageLicenseExpression>777777777777777</PackageLicenseExpression>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
