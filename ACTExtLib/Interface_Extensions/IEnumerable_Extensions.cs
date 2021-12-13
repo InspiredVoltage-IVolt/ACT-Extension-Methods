@@ -1,4 +1,6 @@
-﻿namespace ACT.Core.Extensions
+﻿using System.Text;
+
+namespace ACT.Core.Extensions
 {
     public static class EnumerableExtensions
     {
@@ -95,5 +97,27 @@
         /// <exception cref="T:System.ArgumentNullException"></exception>
 
         public static HashSet<T> ToHashSet<T>(this IEnumerable<T> list) => new HashSet<T>(list);
+
+        /// <summary>
+        /// Save Contents of a List to a File - Utilizes the ToString Method
+        /// </summary>
+        /// <typeparam name="T">Any IEnumerable</typeparam>
+        /// <param name="list">List Of Data</param>
+        /// <param name="FilePath">Place To Save File</param>
+        /// <param name="AddNewLine">Add New Line After Every Entry</param>
+        /// <returns>True/False</returns>
+        public static bool SaveToFile<T>(this IEnumerable<T> list, string FilePath, bool AddNewLine = true)
+        {
+            StringBuilder _B = new StringBuilder();
+
+            foreach (T item in list)
+            {
+                if (item == null) { continue; }
+                _B.Append(item.ToString());
+                if (AddNewLine) { _B.Append(Environment.NewLine); }
+            }
+
+            return _B.ToString().SaveAllText(FilePath);
+        }
     }
 }

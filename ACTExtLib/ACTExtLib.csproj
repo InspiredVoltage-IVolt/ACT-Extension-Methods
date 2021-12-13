@@ -19,7 +19,7 @@ Since this is community open suggestions all code pulls are reviewed and merged 
     <PackageIcon>ACT_Common_Icon.png</PackageIcon>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>IVolt_ACT_ExtensionLibrary</PackageId>
-    <Version>2.0.5</Version>
+    <Version>2.0.6</Version>
     <Company>Inspired Voltage</Company>
     <Product>ACT_ExtensionLibrary</Product>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -27,7 +27,7 @@ Since this is community open suggestions all code pulls are reviewed and merged 
     <PackageReleaseNotes>Initial Release Just Getting the Package Launched as I migrate old projects into .net 6</PackageReleaseNotes>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <PackageLicenseExpression>777777777777777</PackageLicenseExpression>
+    <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
