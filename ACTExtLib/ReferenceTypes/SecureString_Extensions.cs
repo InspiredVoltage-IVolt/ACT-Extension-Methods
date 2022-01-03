@@ -1,4 +1,4 @@
-﻿namespace ACT.Core.Extensions.ReferenceTypes
+﻿namespace ACT.Core.Extensions
 {
     using System;
     using System.Runtime.InteropServices;

@@ -1,6 +1,6 @@
-﻿using System.Drawing;
+﻿using ACT.Core.Constants;
+using System.Drawing;
 using System.Text.RegularExpressions;
-
 namespace ACT.Core.Extensions
 {
     /// <summary>   Holds Extension Methods For System.Drawing.Color objects. </summary>
@@ -24,7 +24,7 @@ namespace ACT.Core.Extensions
             return str1 + str2 + str3;
         }
 
-        public static bool CheckValidFormatHtmlColor(this string inputColor) => Regex.Match(inputColor, ACT.Core.Constants.RegularExpressions.ColorHex).Success;
+        public static bool CheckValidFormatHtmlColor(this string inputColor) => Regex.Match(inputColor, RegularExpressions.ColorHex).Success;
 
         /// <summary>
         /// Get Color from a Hex String

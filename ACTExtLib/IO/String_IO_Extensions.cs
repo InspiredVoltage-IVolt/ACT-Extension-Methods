@@ -45,7 +45,7 @@ namespace ACT.Core.Extensions
         private static readonly IntPtr INVALID_HANDLE_VALUE = new IntPtr(-1);
         private const int FILE_ATTRIBUTE_DIRECTORY = 16;
 
-        private static int GetFileCount(this string dir, bool includeSubdirectories = false)
+        public static int GetFileCount(this string dir, bool includeSubdirectories = false)
         {
             string searchPattern = Path.Combine(dir, "*");
 
@@ -82,8 +82,17 @@ namespace ACT.Core.Extensions
 
         /// <summary>Reads all the text from the File Path</summary>
         /// <param name="FilePath"></param>
-        /// <returns></returns>
-        public static string ReadAllText(this string FilePath) => File.ReadAllText(FilePath);
+        /// <returns>Null Means File Doesnt Exist, Empty is EmptyFile or Other Permission Errors, No Exceptions Thrown</returns>
+        public static string ReadAllText(this string FilePath)
+        {
+            var _tmpReturn = String.Empty;
+            if (!File.Exists(FilePath)) { return null; }
+
+            try { _tmpReturn = File.ReadAllText(FilePath); }
+            catch { return _tmpReturn; }
+
+            return _tmpReturn;
+        }
 
         /// <summary>
         /// Tries to copy a file from one location to another using a FileShare.ReadWrite operation.
@@ -262,14 +271,14 @@ namespace ACT.Core.Extensions
         /// <param name="BaseDirectory">Base Directory</param>
         /// <param name="Recursive">Get Files In Sub Folders</param>
         /// <returns>List{string} All Files Found</returns>
-        public static List<string> GetAllFilesFromPath(this string BaseDirectory, bool Recursive) => Recursive ? String_FileIO._getallfilesfrompath(BaseDirectory, new List<string>()) : ((IEnumerable<string>)Directory.GetFiles(BaseDirectory)).ToList<string>();
+        public static List<string> GetAllFilesFromPath(this string BaseDirectory, bool Recursive) => Recursive ? String_FileIO.GetAllFilesFromPath(BaseDirectory, Recursive) : ((IEnumerable<string>)Directory.GetFiles(BaseDirectory)).ToList<string>();
 
         /// <summary>Get All Files From Base Directory</summary>
         /// <param name="BaseDirectory">Base Directory</param>
         /// <param name="FileNamePattern">This looks at the FileName only.  Use * as wildcards</param>
         /// <param name="Recursive">Get Files In Sub Folders</param>
         /// <returns>List{string} All Files Found</returns>
-        public static List<string> GetAllFilesFromPath(this string BaseDirectory, string RegexPattern, bool Recursive) => Recursive ? String_FileIO._getallfilesfrompath(BaseDirectory, new List<string>()) : ((IEnumerable<string>)Directory.GetFiles(BaseDirectory)).ToList<string>();
+        public static List<string> GetAllFilesFromPath(this string BaseDirectory, string RegexPattern, bool Recursive) => Recursive ? String_FileIO.GetAllFilesFromPath(BaseDirectory, RegexPattern, Recursive) : ((IEnumerable<string>)Directory.GetFiles(BaseDirectory)).ToList<string>();
 
         /// <summary>
         /// Attempts To Delete A File.  Waits For It To Complete.  Throws Error On Lock or Other Issue.

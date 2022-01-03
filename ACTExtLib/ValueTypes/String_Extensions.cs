@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using ACT.Core.Constants;
+using Newtonsoft.Json;
 using System.Data;
 using System.Globalization;
 using System.Security;
@@ -844,7 +845,7 @@ namespace ACT.Core.Extensions
         public static bool FileNameIsImage(this string inputString)
         {
             bool _tmpReturn = false;
-            foreach (string fileType in ACT.Core.Constants.FileFormat_Standards.ImageFileTypes)
+            foreach (string fileType in FileFormat_Standards.ImageFileTypes)
             {
                 if (inputString.EndsWith(fileType, StringComparison.CurrentCultureIgnoreCase))
                 {

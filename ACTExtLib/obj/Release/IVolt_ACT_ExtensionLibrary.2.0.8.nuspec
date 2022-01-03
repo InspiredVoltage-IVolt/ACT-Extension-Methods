@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>IVolt_ACT_ExtensionLibrary</id>
+    <version>2.0.8</version>
+    <authors>IVolt, Darkbit, Mark Alicz</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="expression">GPL-3.0-only</license>
+    <licenseUrl>https://licenses.nuget.org/GPL-3.0-only</licenseUrl>
+    <icon>ACT_Common_Icon.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://www.act-net.us/applications/ExtensionLibrary/</projectUrl>
+    <description>ACT Extension Methods is a .Net 6, C#, Library that contains many useful extensions to make development fun and easy.  Easy to use by adding "using ACT.Core.Extensions;" and volia you will have all the extensions you will ever need.  
+Since this is community open suggestions all code pulls are reviewed and merged when value is identified.</description>
+    <releaseNotes>Initial Release Just Getting the Package Launched as I migrate old projects into .net 6</releaseNotes>
+    <copyright>(c) 2021 IVolt, LLC</copyright>
+    <tags>C# .NET 6 Extensions Extension Library IVolt Mark Alicz</tags>
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="FastExcel" version="3.0.13" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.CSharp" version="4.7.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="13.0.1" exclude="Build,Analyzers" />
+        <dependency id="System.Data.SqlClient" version="4.8.3" exclude="Build,Analyzers" />
+        <dependency id="System.Drawing.Common" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Security.Cryptography.Algorithms" version="4.3.1" exclude="Build,Analyzers" />
+        <dependency id="System.Text.RegularExpressions" version="4.3.1" exclude="Build,Analyzers" />
+        <dependency id="System.Xml.XPath" version="4.3.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="D:\IVolt_Releases\ACT-Extension_Methods\Windows\Release\net6.0\ACTExtLib.dll" target="lib\net6.0\ACTExtLib.dll" />
+    <file src="D:\IVolt_Development\ACT-Extension-Methods\ACT-Extension-Methods\ACTExtLib\README.md" target="\README.md" />
+    <file src="M:\Shared drives\Assets\IVolt_Product_Images\ACT\Extension-Methods\ACT_Common_Icon.png" target="\ACT_Common_Icon.png" />
+  </files>
+</package>

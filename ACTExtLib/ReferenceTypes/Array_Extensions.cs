@@ -1,4 +1,4 @@
-﻿namespace ACT.Core.Extensions.ReferenceTypes
+﻿namespace ACT.Core.Extensions
 {
     public static class Array_Extensions
     {

@@ -19,7 +19,7 @@ Since this is community open suggestions all code pulls are reviewed and merged 
     <PackageIcon>ACT_Common_Icon.png</PackageIcon>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>IVolt_ACT_ExtensionLibrary</PackageId>
-    <Version>2.0.7</Version>
+    <Version>2.1.0</Version>
     <Company>Inspired Voltage</Company>
     <Product>ACT_ExtensionLibrary</Product>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -28,6 +28,7 @@ Since this is community open suggestions all code pulls are reviewed and merged 
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
+    <Platforms>AnyCPU;x64;ARM64</Platforms>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -36,7 +37,31 @@ Since this is community open suggestions all code pulls are reviewed and merged 
     <FileAlignment>4096</FileAlignment>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <WarningLevel>3</WarningLevel>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <WarningLevel>3</WarningLevel>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>3</WarningLevel>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <WarningLevel>3</WarningLevel>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <WarningLevel>3</WarningLevel>
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
     <FileAlignment>4096</FileAlignment>

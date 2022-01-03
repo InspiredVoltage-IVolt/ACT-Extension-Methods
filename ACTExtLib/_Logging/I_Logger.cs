@@ -1,11 +1,4 @@
-﻿using System;
-using System.Reflection;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ACT.Core.Extensions._Logging
+﻿namespace ACT.Core.Extensions
 {
     public interface I_Logger
     {

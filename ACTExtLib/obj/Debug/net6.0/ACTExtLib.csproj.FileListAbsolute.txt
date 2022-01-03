@@ -1,4 +1,3 @@
-D:\IVolt_Development\ACT-Extension-Methods\ACT-Extension-Methods\ACTExtLib\obj\Debug\net6.0\ACTExtLib.csproj.AssemblyReference.cache
 D:\IVolt_Development\ACT-Extension-Methods\ACT-Extension-Methods\ACTExtLib\obj\Debug\net6.0\ACTExtLib.GeneratedMSBuildEditorConfig.editorconfig
 D:\IVolt_Development\ACT-Extension-Methods\ACT-Extension-Methods\ACTExtLib\obj\Debug\net6.0\ACTExtLib.AssemblyInfoInputs.cache
 D:\IVolt_Development\ACT-Extension-Methods\ACT-Extension-Methods\ACTExtLib\obj\Debug\net6.0\ACTExtLib.AssemblyInfo.cs

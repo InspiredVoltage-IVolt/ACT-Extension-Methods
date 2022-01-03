@@ -1,4 +1,4 @@
-﻿namespace ACT.Core.Extensions.ValueTypes
+﻿namespace ACT.Core.Extensions
 {
     public static class LongExtensions
     {

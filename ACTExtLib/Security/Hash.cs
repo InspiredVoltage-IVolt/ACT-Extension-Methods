@@ -1,7 +1,7 @@
-﻿using System.Text;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
+using System.Text;
 
-namespace ACT.Core.Extensions.Security
+namespace ACT.Core.Extensions
 {
 
 
@@ -75,14 +75,16 @@ namespace ACT.Core.Extensions.Security
         /// <param name="hashType">The hash algorithm to use</param>
         /// <returns>The resulting hash or an empty string on error</returns>
         public static string ComputeHash(this string input, eHashType hashType)
-        {            
+        {
             try
             {
                 byte[] hash = GetHash(input, hashType);
                 StringBuilder ret = new StringBuilder();
 
                 for (int i = 0; i < hash.Length; i++)
+                {
                     ret.Append(hash[i].ToString("x2"));
+                }
 
                 return ret.ToString();
             }

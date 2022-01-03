@@ -1,7 +1,7 @@
 ﻿using System.Collections.Specialized;
 using System.Net;
 
-namespace ACT.Core.Extensions.Web
+namespace ACT.Core.Extensions
 {
     public static class Web_Extensions
     {

@@ -2,7 +2,7 @@
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 
-namespace ACT.Core.Extensions.ReferenceTypes
+namespace ACT.Core.Extensions
 {
     public static class ImageExtensions
     {
