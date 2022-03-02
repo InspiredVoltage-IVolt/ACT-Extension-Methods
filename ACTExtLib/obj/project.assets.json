@@ -3215,39 +3215,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MarkAlicz\\.nuget\\packages\\": {},
-    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\MarkAlicz\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "2.1.0",
+    "version": "2.1.3",
     "restore": {
-      "projectUniqueName": "D:\\IVolt_Development\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACTExtLib.csproj",
-      "projectName": "IVolt_ACT_ExtensionLibrary",
-      "projectPath": "D:\\IVolt_Development\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACTExtLib.csproj",
+      "projectUniqueName": "D:\\IVolt_Development\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACT_Extension_Library.csproj",
+      "projectName": "ACT_Extension_Library",
+      "projectPath": "D:\\IVolt_Development\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACT_Extension_Library.csproj",
       "packagesPath": "C:\\Users\\MarkAlicz\\.nuget\\packages\\",
       "outputPath": "D:\\IVolt_Development\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\MarkAlicz\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress .NET Core Desktop 20.1.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\MarkAlicz\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\DevExpress 20.1\\.NET Core Desktop Libraries\\System\\Components\\Packages": {},
-        "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://nuget.act-net.us/nuget": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "http://actnuget.homeunix.com:5555/v3/index.json": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3314,7 +3301,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

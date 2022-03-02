@@ -160,7 +160,7 @@ namespace ACT.Core.Extensions
         }
 
         /// <summary>
-        /// Copys All The Files From The Source To The Destination
+        /// Copys All The Files From The Source To The Destination -Mark
         /// </summary>
         /// <param name="SourceDir">Source Directory</param>
         /// <param name="DestinationDir">Destination Directory</param>

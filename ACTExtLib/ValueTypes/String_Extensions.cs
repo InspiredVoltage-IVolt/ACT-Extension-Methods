@@ -360,9 +360,9 @@ namespace ACT.Core.Extensions
             {
                 encoding = System.Text.Encoding.UTF32;
             }
-            else if (buffer[0] == 43 && buffer[1] == 47 && buffer[2] == 118)
+            else /*if (buffer[0] == 43 && buffer[1] == 47 && buffer[2] == 118)*/
             {
-                encoding = System.Text.Encoding.UTF7;
+                encoding = System.Text.Encoding.UTF8;
             }
 
             using (MemoryStream memoryStream = new MemoryStream())
