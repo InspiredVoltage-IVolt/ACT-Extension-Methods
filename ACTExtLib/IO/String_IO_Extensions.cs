@@ -682,12 +682,18 @@ namespace ACT.Core.Extensions
         /// </summary>
         /// <param name="x">Sub Directory To Search For</param>
         /// <returns></returns>
-        public static List<string> GetAllSubDirectories(this string x)
+        public static List<string> GetAllSubDirectories(this string x, string SearchPattern = "")
         {
             var _tmpReturn = new List<string>();
-            if (x.DirectoryExists()) { return _tmpReturn; }
-
-            var _Returns = System.IO.Directory.GetDirectories(x, "*.dll", SearchOption.AllDirectories);
+            if (x.DirectoryExists() == false) { throw new DirectoryNotFoundException(x); }
+            if (SearchPattern.NullOrEmpty())
+            {
+                var _Returns = Directory.GetDirectories(x, "", SearchOption.AllDirectories);
+            }
+            else
+            {
+                var _Returns = Directory.GetDirectories(x, SearchPattern, SearchOption.AllDirectories);
+            }
 
             return _tmpReturn;
         }
