@@ -3220,11 +3220,11 @@
   "project": {
     "version": "2.1.5",
     "restore": {
-      "projectUniqueName": "D:\\IVolt_Development\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACT_Extension_Library.csproj",
+      "projectUniqueName": "D:\\IVolt_Development\\__GITHUB\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACT_Extension_Library.csproj",
       "projectName": "ACT_Extension_Library",
-      "projectPath": "D:\\IVolt_Development\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACT_Extension_Library.csproj",
+      "projectPath": "D:\\IVolt_Development\\__GITHUB\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACT_Extension_Library.csproj",
       "packagesPath": "C:\\Users\\MarkAlicz\\.nuget\\packages\\",
-      "outputPath": "D:\\IVolt_Development\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\obj\\",
+      "outputPath": "D:\\IVolt_Development\\__GITHUB\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\MarkAlicz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3305,7 +3305,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

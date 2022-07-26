@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "++CHmWa5dOkRJKZBwsOHk7hInAHMPv0+kr5KDvbI06OgLnVzeisjcFAdFyX8/l4br2baaexEbVLkyEpXDYvGWQ==",
+  "dgSpecHash": "BPXIOx9rvAY/MHbE4TzKHB+6lvLLEbg2sMwxPnt3pPcP4LLjQ5fIH9RfaVZMtGPyBggfuZgv//qfPzCWih4K1Q==",
   "success": true,
-  "projectFilePath": "D:\\IVolt_Development\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACT_Extension_Library.csproj",
+  "projectFilePath": "D:\\IVolt_Development\\__GITHUB\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACT_Extension_Library.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MarkAlicz\\.nuget\\packages\\fastexcel\\3.0.13\\fastexcel.3.0.13.nupkg.sha512",
     "C:\\Users\\MarkAlicz\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

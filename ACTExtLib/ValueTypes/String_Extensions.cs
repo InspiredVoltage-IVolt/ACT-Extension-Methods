@@ -12,6 +12,49 @@ namespace ACT.Core.Extensions
 {
     public static class String_Extensions
     {
+
+        /// <summary>
+        /// Cleans the comments from a File.
+        /// </summary>
+        /// <param name="x">The x.</param>
+        /// <param name="CommentTags">The comment tags.</param>
+        /// <returns></returns>
+        public static string CleanComments(this string x, List<(string TagStart, string TagEnd, bool WholeLine, bool Inside)> CommentTags)
+        {
+            string _tmpReturn = x;
+            int s, e = -1;
+            foreach (var tag in CommentTags)
+            {
+                s = _tmpReturn.IndexOf(tag.TagStart);
+                while (s > -1)
+                {
+                    if (tag.TagEnd.NullOrEmpty())
+                    {
+                        if (tag.WholeLine)
+                        {
+                            e = _tmpReturn.IndexOf(Environment.NewLine);
+                            _tmpReturn = _tmpReturn.Substring(0, s) + _tmpReturn.Substring(e + Environment.NewLine.Length); //CHECK REMOVE LINE
+                        }
+                        else { _tmpReturn = _tmpReturn.Replace(tag.TagStart, ""); }
+                    }
+                    else
+                    {
+                        e = _tmpReturn.IndexOf(tag.TagStart, s + tag.TagStart.Length);
+                        if (tag.Inside) { _tmpReturn = _tmpReturn.Substring(0, s) + _tmpReturn.Substring(e); } //CHECK - TEST
+                        else
+                        {
+                            _tmpReturn = _tmpReturn.Replace(tag.TagStart, "");
+                            _tmpReturn = _tmpReturn.Replace(tag.TagEnd, "");
+                        }
+                    }
+                }
+            }
+            return _tmpReturn;
+        }
+
+
+
+
         /// <summary>
         /// Searches the string X for any instance of the List of Strings
         /// </summary>

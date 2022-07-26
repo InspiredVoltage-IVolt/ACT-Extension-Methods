@@ -59,7 +59,7 @@ Since this is community open suggestions all code pulls are reviewed and merged 
 
   <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
-    <None Include="M:\Shared drives\Assets\IVolt_Product_Images\ACT\Extension-Methods\ACT_Common_Icon.png">
+    <None Include=".\ACT_Common_Icon.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>

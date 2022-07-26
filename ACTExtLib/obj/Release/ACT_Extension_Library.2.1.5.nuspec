@@ -30,7 +30,7 @@ Since this is community open suggestions all code pulls are reviewed and merged 
   </metadata>
   <files>
     <file src="D:\IVolt_Releases\ACT-Extension_Methods\Release\net6.0\ACTExtLib.dll" target="lib\net6.0\ACTExtLib.dll" />
-    <file src="D:\IVolt_Development\ACT-Extension-Methods\ACT-Extension-Methods\ACTExtLib\README.md" target="\README.md" />
-    <file src="M:\Shared drives\Assets\IVolt_Product_Images\ACT\Extension-Methods\ACT_Common_Icon.png" target="\ACT_Common_Icon.png" />
+    <file src="D:\IVolt_Development\__GITHUB\ACT-Extension-Methods\ACT-Extension-Methods\ACTExtLib\README.md" target="\README.md" />
+    <file src="D:\IVolt_Development\__GITHUB\ACT-Extension-Methods\ACT-Extension-Methods\ACTExtLib\ACT_Common_Icon.png" target="\ACT_Common_Icon.png" />
   </files>
 </package>
