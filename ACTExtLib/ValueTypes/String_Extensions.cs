@@ -19,32 +19,32 @@ namespace ACT.Core.Extensions
         /// <param name="x">The x.</param>
         /// <param name="CommentTags">The comment tags.</param>
         /// <returns></returns>
-        public static string CleanComments(this string x, List<(string TagStart, string TagEnd, bool WholeLine, bool Inside)> CommentTags)
+        public static string CleanComments(this string x, Dictionary<string, string> CommentTags, bool WholeLine, bool Inside)
         {
             string _tmpReturn = x;
             int s, e = -1;
-            foreach (var tag in CommentTags)
+            foreach (var tag in CommentTags.Keys)
             {
-                s = _tmpReturn.IndexOf(tag.TagStart);
+                s = _tmpReturn.IndexOf(tag);
                 while (s > -1)
                 {
-                    if (tag.TagEnd.NullOrEmpty())
+                    if (CommentTags[tag].NullOrEmpty())
                     {
-                        if (tag.WholeLine)
+                        if (WholeLine)
                         {
                             e = _tmpReturn.IndexOf(Environment.NewLine);
                             _tmpReturn = _tmpReturn.Substring(0, s) + _tmpReturn.Substring(e + Environment.NewLine.Length); //CHECK REMOVE LINE
                         }
-                        else { _tmpReturn = _tmpReturn.Replace(tag.TagStart, ""); }
+                        else { _tmpReturn = _tmpReturn.Replace(tag, ""); }
                     }
                     else
                     {
-                        e = _tmpReturn.IndexOf(tag.TagStart, s + tag.TagStart.Length);
-                        if (tag.Inside) { _tmpReturn = _tmpReturn.Substring(0, s) + _tmpReturn.Substring(e); } //CHECK - TEST
+                        e = _tmpReturn.IndexOf(CommentTags[tag], s + tag.Length);
+                        if (Inside) { _tmpReturn = _tmpReturn.Substring(0, s) + _tmpReturn.Substring(e); } //CHECK - TEST
                         else
                         {
-                            _tmpReturn = _tmpReturn.Replace(tag.TagStart, "");
-                            _tmpReturn = _tmpReturn.Replace(tag.TagEnd, "");
+                            _tmpReturn = _tmpReturn.Replace(tag, "");
+                            _tmpReturn = _tmpReturn.Replace(CommentTags[tag], "");
                         }
                     }
                 }
