@@ -19,37 +19,42 @@ namespace ACT.Core.Extensions
         /// <param name="x">The x.</param>
         /// <param name="CommentTags">The comment tags.</param>
         /// <returns></returns>
-        public static string CleanComments(this string x, Dictionary<string, string> CommentTags, bool WholeLine, bool Inside)
+        public static string CleanComments(this string x, Dictionary<string, string> CommentTags, bool StartsLine = true)
         {
-            string _tmpReturn = x;
-            int s, e = -1;
+	        var Data = "";
             foreach (var tag in CommentTags.Keys)
             {
-                s = _tmpReturn.IndexOf(tag);
-                while (s > -1)
-                {
-                    if (CommentTags[tag].NullOrEmpty())
-                    {
-                        if (WholeLine)
-                        {
-                            e = _tmpReturn.IndexOf(Environment.NewLine);
-                            _tmpReturn = _tmpReturn.Substring(0, s) + _tmpReturn.Substring(e + Environment.NewLine.Length); //CHECK REMOVE LINE
-                        }
-                        else { _tmpReturn = _tmpReturn.Replace(tag, ""); }
-                    }
-                    else
-                    {
-                        e = _tmpReturn.IndexOf(CommentTags[tag], s + tag.Length);
-                        if (Inside) { _tmpReturn = _tmpReturn.Substring(0, s) + _tmpReturn.Substring(e); } //CHECK - TEST
-                        else
-                        {
-                            _tmpReturn = _tmpReturn.Replace(tag, "");
-                            _tmpReturn = _tmpReturn.Replace(CommentTags[tag], "");
-                        }
-                    }
-                }
+                string TagLineData = x.Trim();
+                if (TagLineData.StartsWith(tag)) { { continue; } }
+
+                Data += TagLineData;
+
+
+                //s = _tmpReturn.IndexOf(tag);
+                //while (s > -1)
+                //{
+                //    if (CommentTags[tag].NullOrEmpty())
+                //    {
+                //        if (WholeLine)
+                //        {
+                //            e = _tmpReturn.IndexOf(Environment.NewLine);
+                //            _tmpReturn = _tmpReturn.Substring(0, s) + _tmpReturn.Substring(e + Environment.NewLine.Length); //CHECK REMOVE LINE
+                //        }
+                //        else { _tmpReturn = _tmpReturn.Replace(tag, ""); }
+                //    }
+                //    else
+                //    {
+                //        a = _tmpReturn.IndexOf(CommentTags[tag], s + tag.Length);
+                //        if (Inside) { _tmpReturn = _tmpReturn.Substring(0, s) + _tmpReturn.Substring(e); } //CHECK - TEST
+                //        else
+                //        {
+                //            _tmpReturn = _tmpReturn.Replace(tag, "");
+                //            _tmpReturn = _tmpReturn.Replace(CommentTags[tag], "");
+                //        }
+                //    }
+                //}
             }
-            return _tmpReturn;
+            return Data;
         }
 
 

@@ -5,7 +5,7 @@
   },
   "projects": {
     "D:\\IVolt_Development\\__GITHUB\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACT_Extension_Library.csproj": {
-      "version": "2.1.8.1",
+      "version": "2.1.8.2",
       "restore": {
         "projectUniqueName": "D:\\IVolt_Development\\__GITHUB\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACT_Extension_Library.csproj",
         "projectName": "ACT_Extension_Library",
@@ -13,6 +13,9 @@
         "packagesPath": "C:\\Users\\MarkAlicz\\.nuget\\packages\\",
         "outputPath": "D:\\IVolt_Development\\__GITHUB\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\MarkAlicz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress .NET Core Desktop 20.1.config",
@@ -25,8 +28,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
-          "http://actnuget.homeunix.com:5555/v3/index.json": {},
-          "https://api.nuget.org/v3/index.json": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -84,7 +86,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -93,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

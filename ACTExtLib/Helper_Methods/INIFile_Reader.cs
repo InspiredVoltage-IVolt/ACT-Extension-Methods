@@ -72,8 +72,7 @@ namespace ACT.Core.Extensions
             if (FilePath == null) { throw new Exception("File Must Exist First"); }
 
             SingleSection += FilePath.Replace("\\", "").Replace("/", "").Replace("c:", "", StringComparison.InvariantCultureIgnoreCase);
-
-
+            
             if (FromCache)
             {
                 if (_Cache.ContainsKey(SingleSection) == true)
