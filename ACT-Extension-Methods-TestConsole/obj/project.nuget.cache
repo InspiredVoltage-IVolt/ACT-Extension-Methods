@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xYN/s6BBhUPVAkYoBTyUvZqM4GvCh+jtY+AyRkwoKkVyWc1kFCu7RUebIr8OwlBerEl0IhsgR0SN2dnfv2Zubw==",
+  "dgSpecHash": "4kiqsfkzNu3/7amA8HCMmMdZEY4q2DoS1i9oxO5zv+GVuRYcvgU1dYCnPmTth6ibo3xrTWiQDNj0AwSzcO5Rhw==",
   "success": true,
   "projectFilePath": "D:\\IVolt_Development\\__GITHUB\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACT-Extension-Methods-TestConsole\\ACT-Extension-Methods-TestConsole.csproj",
   "expectedPackageFiles": [
@@ -81,8 +81,7 @@
     "C:\\Users\\MarkAlicz\\.nuget\\packages\\system.threading.tasks.extensions\\4.3.0\\system.threading.tasks.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\MarkAlicz\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\MarkAlicz\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\MarkAlicz\\.nuget\\packages\\system.xml.xpath\\4.3.0\\system.xml.xpath.4.3.0.nupkg.sha512",
-    "C:\\Users\\MarkAlicz\\.nuget\\packages\\act_extension_library\\2.1.8.2\\act_extension_library.2.1.8.2.nupkg.sha512"
+    "C:\\Users\\MarkAlicz\\.nuget\\packages\\system.xml.xpath\\4.3.0\\system.xml.xpath.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

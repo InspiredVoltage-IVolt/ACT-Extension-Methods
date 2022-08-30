@@ -1249,7 +1249,7 @@
           "lib/netstandard1.3/System.Xml.XPath.dll": {}
         }
       },
-      "ACT_Extension_Library/2.1.8.2": {
+      "ACT_Extension_Library/2.1.8.3": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -4304,7 +4304,7 @@
         "system.xml.xpath.nuspec"
       ]
     },
-    "ACT_Extension_Library/2.1.8.2": {
+    "ACT_Extension_Library/2.1.8.3": {
       "type": "project",
       "path": "../ACTExtLib/ACT_Extension_Library.csproj",
       "msbuildProject": "../ACTExtLib/ACT_Extension_Library.csproj"
@@ -4312,7 +4312,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "ACT_Extension_Library >= 2.1.8.2"
+      "ACT_Extension_Library >= 2.1.8.3"
     ]
   },
   "packageFolders": {
