@@ -1,0 +1,178 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\IVolt_Development\\__GITHUB\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACT-Extension-Methods-TestConsole\\ACT-Extension-Methods-TestConsole.csproj": {}
+  },
+  "projects": {
+    "D:\\IVolt_Development\\__GITHUB\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACT-Extension-Methods-TestConsole\\ACT-Extension-Methods-TestConsole.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\IVolt_Development\\__GITHUB\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACT-Extension-Methods-TestConsole\\ACT-Extension-Methods-TestConsole.csproj",
+        "projectName": "ACT-Extension-Methods-TestConsole",
+        "projectPath": "D:\\IVolt_Development\\__GITHUB\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACT-Extension-Methods-TestConsole\\ACT-Extension-Methods-TestConsole.csproj",
+        "packagesPath": "C:\\Users\\MarkAlicz\\.nuget\\packages\\",
+        "outputPath": "D:\\IVolt_Development\\__GITHUB\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACT-Extension-Methods-TestConsole\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\MarkAlicz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress .NET Core Desktop 20.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\IVolt_Development\\__GITHUB\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACT_Extension_Library.csproj": {
+                "projectPath": "D:\\IVolt_Development\\__GITHUB\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACT_Extension_Library.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\IVolt_Development\\__GITHUB\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACT_Extension_Library.csproj": {
+      "version": "2.1.8.2",
+      "restore": {
+        "projectUniqueName": "D:\\IVolt_Development\\__GITHUB\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACT_Extension_Library.csproj",
+        "projectName": "ACT_Extension_Library",
+        "projectPath": "D:\\IVolt_Development\\__GITHUB\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACT_Extension_Library.csproj",
+        "packagesPath": "C:\\Users\\MarkAlicz\\.nuget\\packages\\",
+        "outputPath": "D:\\IVolt_Development\\__GITHUB\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\MarkAlicz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress .NET Core Desktop 20.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
+            "FastExcel": {
+              "target": "Package",
+              "version": "[3.0.13, )"
+            },
+            "Microsoft.CSharp": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "System.Data.OleDb": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.3, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "System.Security.Cryptography.Algorithms": {
+              "target": "Package",
+              "version": "[4.3.1, )"
+            },
+            "System.Text.RegularExpressions": {
+              "target": "Package",
+              "version": "[4.3.1, )"
+            },
+            "System.Xml.XPath": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
