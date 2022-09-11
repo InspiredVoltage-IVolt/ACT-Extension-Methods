@@ -19,7 +19,7 @@ Since this is community open suggestions all code pulls are reviewed and merged 
     <PackageIcon>ACT_Common_Icon.png</PackageIcon>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>ACT_Extension_Library</PackageId>
-    <Version>2.1.8.3</Version>
+    <Version>2.1.8.4</Version>
     <Company>IVolt, LLC</Company>
     <Product>ACT_Extension_Library</Product>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -29,8 +29,8 @@ Since this is community open suggestions all code pulls are reviewed and merged 
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
     <Platforms>x64;AnyCPU</Platforms>
-    <AssemblyVersion>2.1.8.3</AssemblyVersion>
-    <FileVersion>2.1.8.3</FileVersion>
+    <AssemblyVersion>2.1.8.4</AssemblyVersion>
+    <FileVersion>2.1.8.4</FileVersion>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 

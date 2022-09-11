@@ -631,6 +631,12 @@ namespace ACT.Core.Extensions
             return nameFromFullPath.Substring(0, nameFromFullPath.LastIndexOf("."));
         }
 
+
+        public static string ChangeFileExtension (this string CurrentFile, string NewExt)
+        {
+	        return Path.ChangeExtension (CurrentFile, NewExt);
+        }
+
         /// <summary>
         /// Returns the File Name From The Full File Path (Includes Network Paths)
         /// </summary>
