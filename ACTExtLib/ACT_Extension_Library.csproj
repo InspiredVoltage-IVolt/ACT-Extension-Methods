@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
     <RootNamespace>ACT.Core.Extensions</RootNamespace>
@@ -12,26 +12,28 @@
     <SignAssembly>False</SignAssembly>
     <ErrorReport>none</ErrorReport>
     <Authors>Mark Alicz</Authors>
-    <Description>ACT Extension Methods is a .Net 6, C#, Library that contains many useful extensions to make development fun and easy.  Easy to use by adding "using ACT.Core.Extensions;" and volia you will have all the extensions you will ever need.  
+    <Description>ACT Extension Methods is a .Net 7, C#, Library that contains many useful extensions to make development fun and easy.  Easy to use by adding "using ACT.Core.Extensions;" and volia you will have all the extensions you will ever need.  
 Since this is community open suggestions all code pulls are reviewed and merged when value is identified.</Description>
-    <Copyright>(c) 2022 IVolt, LLC</Copyright>
+    <Copyright>(c) 2023 IVolt, LLC</Copyright>
     <PackageProjectUrl>https://www.act-net.us/applications/ExtensionLibrary/</PackageProjectUrl>
     <PackageIcon>ACT_Common_Icon.png</PackageIcon>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>ACT_Extension_Library</PackageId>
-    <Version>2.1.8.4</Version>
+    <Version>2.3.1.1</Version>
     <Company>IVolt, LLC</Company>
     <Product>ACT_Extension_Library</Product>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageTags>C#; .NET 6; Extensions; Extension Library; IVolt; Mark Alicz</PackageTags>
-    <PackageReleaseNotes>Initial Release Just Getting the Package Launched as I migrate old projects into .net 6</PackageReleaseNotes>
+    <PackageTags>C#; .NET 7; Extensions; Extension Library; IVolt; Mark Alicz</PackageTags>
+    <PackageReleaseNotes>Initial Release Just Getting the Package Launched as I migrate old projects into .net 7</PackageReleaseNotes>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
     <Platforms>x64;AnyCPU</Platforms>
-    <AssemblyVersion>2.1.8.4</AssemblyVersion>
-    <FileVersion>2.1.8.4</FileVersion>
+    <AssemblyVersion>2.3.1.1</AssemblyVersion>
+    <FileVersion>2.3.1.1</FileVersion>
     <RepositoryType>git</RepositoryType>
+    <Title>C-Sharp Helpful Extensions</Title>
+    <PackageOutputPath>D:\IVolt_Releases\ACT-Extension_Methods\Packages\$(Platform)\$(Configuration)</PackageOutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -67,13 +69,13 @@ Since this is community open suggestions all code pulls are reviewed and merged 
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="EPPlus" Version="6.0.6" />
+    <PackageReference Include="EPPlus" Version="6.1.2" />
     <PackageReference Include="FastExcel" Version="3.0.13" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="System.Data.OleDb" Version="6.0.0" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
-    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="System.Data.OleDb" Version="7.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
     <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
     <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
     <PackageReference Include="System.Xml.XPath" Version="4.3.0" />

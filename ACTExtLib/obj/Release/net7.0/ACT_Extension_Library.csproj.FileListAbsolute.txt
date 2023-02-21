@@ -1,0 +1,10 @@
+D:\IVolt_Releases\ACT-Extension_Methods\Release\net7.0\ACTExtLib.deps.json
+D:\IVolt_Releases\ACT-Extension_Methods\Release\net7.0\ACTExtLib.dll
+D:\IVolt_Releases\ACT-Extension_Methods\Release\net7.0\ACTExtLib.pdb
+D:\IVolt_Development\__GITHUB\ACT-Extension-Methods\ACT-Extension-Methods\ACTExtLib\obj\Release\net7.0\ACT_Extension_Library.csproj.AssemblyReference.cache
+D:\IVolt_Development\__GITHUB\ACT-Extension-Methods\ACT-Extension-Methods\ACTExtLib\obj\Release\net7.0\ACT_Extension_Library.GeneratedMSBuildEditorConfig.editorconfig
+D:\IVolt_Development\__GITHUB\ACT-Extension-Methods\ACT-Extension-Methods\ACTExtLib\obj\Release\net7.0\ACT_Extension_Library.AssemblyInfoInputs.cache
+D:\IVolt_Development\__GITHUB\ACT-Extension-Methods\ACT-Extension-Methods\ACTExtLib\obj\Release\net7.0\ACT_Extension_Library.AssemblyInfo.cs
+D:\IVolt_Development\__GITHUB\ACT-Extension-Methods\ACT-Extension-Methods\ACTExtLib\obj\Release\net7.0\ACT_Extension_Library.csproj.CoreCompileInputs.cache
+D:\IVolt_Development\__GITHUB\ACT-Extension-Methods\ACT-Extension-Methods\ACTExtLib\obj\Release\net7.0\ACTExtLib.dll
+D:\IVolt_Development\__GITHUB\ACT-Extension-Methods\ACT-Extension-Methods\ACTExtLib\obj\Release\net7.0\ACTExtLib.pdb
