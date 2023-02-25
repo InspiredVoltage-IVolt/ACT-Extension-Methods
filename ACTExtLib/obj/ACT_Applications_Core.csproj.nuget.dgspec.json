@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "D:\\IVolt_Development\\__GITHUB\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACT_Extension_Library.csproj": {}
+    "D:\\IVolt_Development\\__GITHUB\\ACT_Complete_Project_Solution\\ACT_Applications\\ACT_Applications_Core.csproj": {}
   },
   "projects": {
-    "D:\\IVolt_Development\\__GITHUB\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACT_Extension_Library.csproj": {
-      "version": "2.3.2",
+    "D:\\IVolt_Development\\__GITHUB\\ACT_Complete_Project_Solution\\ACT_Applications\\ACT_Applications_Core.csproj": {
+      "version": "2.3.1.1",
       "restore": {
-        "projectUniqueName": "D:\\IVolt_Development\\__GITHUB\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACT_Extension_Library.csproj",
+        "projectUniqueName": "D:\\IVolt_Development\\__GITHUB\\ACT_Complete_Project_Solution\\ACT_Applications\\ACT_Applications_Core.csproj",
         "projectName": "ACT_Extension_Library",
-        "projectPath": "D:\\IVolt_Development\\__GITHUB\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACT_Extension_Library.csproj",
+        "projectPath": "D:\\IVolt_Development\\__GITHUB\\ACT_Complete_Project_Solution\\ACT_Applications\\ACT_Applications_Core.csproj",
         "packagesPath": "C:\\Users\\MarkAlicz\\.nuget\\packages\\",
         "outputPath": "D:\\IVolt_Development\\__GITHUB\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\obj\\",
         "projectStyle": "PackageReference",
@@ -28,7 +28,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://localhost:5000/v3/index.json": {},
+          "D:\\_AI\\AISkillsForWindows-master\\samples\\SentimentAnalyzerCustomSkill\\build": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -46,48 +46,6 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "dependencies": {
-            "EPPlus": {
-              "target": "Package",
-              "version": "[6.1.2, )"
-            },
-            "FastExcel": {
-              "target": "Package",
-              "version": "[3.0.13, )"
-            },
-            "Microsoft.CSharp": {
-              "target": "Package",
-              "version": "[4.7.0, )"
-            },
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[13.0.2, )"
-            },
-            "System.Data.OleDb": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            },
-            "System.Data.SqlClient": {
-              "target": "Package",
-              "version": "[4.8.5, )"
-            },
-            "System.Drawing.Common": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            },
-            "System.Security.Cryptography.Algorithms": {
-              "target": "Package",
-              "version": "[4.3.1, )"
-            },
-            "System.Text.RegularExpressions": {
-              "target": "Package",
-              "version": "[4.3.1, )"
-            },
-            "System.Xml.XPath": {
-              "target": "Package",
-              "version": "[4.3.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
