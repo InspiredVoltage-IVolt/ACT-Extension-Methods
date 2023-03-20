@@ -8,6 +8,9 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Xml.XPath;
 using ACT.Core.Extensions;
+using System.Buffers.Text;
+using System.Threading.Tasks;
+
 
 namespace ACT.Core.Extensions
 {
@@ -521,7 +524,7 @@ namespace ACT.Core.Extensions
       /// <remarks>   Mark Alicz, 12/8/2016. </remarks>
       /// <param name="x">    string To Convert. </param>
       /// <returns>   x as a string. </returns>
-      public static string ToBase64(this string x) => Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes(x));
+      public static string ToBase64(this string x) => Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(x));
 
       /// <summary>
       /// A string extension method that initializes this object from the given from base 64.
@@ -529,8 +532,12 @@ namespace ACT.Core.Extensions
       /// <remarks>   Mark Alicz, 12/8/2016. </remarks>
       /// <param name="x">    string To Convert. </param>
       /// <returns>   A string. </returns>
-      public static string FromBase64(this string x) => System.Text.Encoding.ASCII.GetString(Convert.FromBase64String(x));
+      public static string FromBase64(this string x) => System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(x));
 
+      public static string ToBase91(this string x)
+      {
+         return x.GenerateEncodedString(91);
+      }
 
       /// <summary>   A string extension method that converts an x to an invariant string. </summary>
       /// <remarks>   Mark Alicz, 12/8/2016. </remarks>

@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "g5Y+CMK62DVzp5jsL/DTKN4SnB56vCwXIEZ5oAuZSVyXZMXnru7E8VNR5OCXDADTwnbfQTRar8B72oXSAte2mQ==",
+  "dgSpecHash": "jCs5Om1H7EuxuBgsLnA/lJ2a3PvMLJlrDfTczW6hqqm8aU6P55rNDgoywXaW74YZ6YEu/Pf9+D4gWU6qZ4PTlA==",
   "success": true,
   "projectFilePath": "D:\\IVolt_Development\\__GITHUB\\ACT-Extension-Methods\\ACT-Extension-Methods\\ACTExtLib\\ACT_Extension_Library.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\MarkAlicz\\.nuget\\packages\\epplus\\6.1.2\\epplus.6.1.2.nupkg.sha512",
+    "C:\\Users\\MarkAlicz\\.nuget\\packages\\epplus\\6.1.3\\epplus.6.1.3.nupkg.sha512",
     "C:\\Users\\MarkAlicz\\.nuget\\packages\\epplus.interfaces\\6.1.1\\epplus.interfaces.6.1.1.nupkg.sha512",
     "C:\\Users\\MarkAlicz\\.nuget\\packages\\epplus.system.drawing\\6.1.1\\epplus.system.drawing.6.1.1.nupkg.sha512",
     "C:\\Users\\MarkAlicz\\.nuget\\packages\\fastexcel\\3.0.13\\fastexcel.3.0.13.nupkg.sha512",

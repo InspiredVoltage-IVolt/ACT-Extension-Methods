@@ -8,7 +8,7 @@ namespace ACT.Core.Extensions
         /// <param name="str">
         /// </param>
         /// <returns></returns>
-        public static Stream ToStream(this string str) => new MemoryStream(Encoding.ASCII.GetBytes(str));
+        public static Stream ToStream(this string str) => new MemoryStream(Encoding.UTF8.GetBytes(str));
 
         /// <summary>Converts A Memory Stream To String</summary>
         /// <param name="ms"></param>

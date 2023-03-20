@@ -396,7 +396,7 @@ namespace ACT.Core.Extensions
         /// </param>
         /// <returns>
         /// </returns>
-        public static Stream ToStream([NotNull] this string str) => new MemoryStream(Encoding.ASCII.GetBytes(str));
+        public static Stream ToStream([NotNull] this string str) => new MemoryStream(Encoding.UTF8.GetBytes(str));
 
         /// <summary>Gets A File Name From A Full Path Name</summary>
         /// <param name="x">full Path</param>

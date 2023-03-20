@@ -20,7 +20,7 @@ namespace ACT.Core.Extensions
 
         private static byte[] GetHash(string input, eHashType hash)
         {
-            byte[] inputBytes = Encoding.ASCII.GetBytes(input);
+            byte[] inputBytes = Encoding.UTF8.GetBytes(input);
 
             switch (hash)
             {

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>ACT_Extension_Library</id>
-    <version>2.3.2</version>
+    <version>2.3.2.4</version>
     <title>C-Sharp Helpful Extensions</title>
     <authors>Mark Alicz</authors>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
@@ -33,7 +33,7 @@ Since this is community open suggestions all code pulls are reviewed and merged 
     </dependencies>
   </metadata>
   <files>
-    <file src="D:\IVolt_Releases\ACT-Extension_Methods\Debug\net7.0\ACTExtLib.dll" target="lib\net7.0\ACTExtLib.dll" />
+    <file src="D:\IVolt_Releases\ACT-Extension_Methods\Release\net7.0\ACTExtLib.dll" target="lib\net7.0\ACTExtLib.dll" />
     <file src="D:\IVolt_Development\__GITHUB\ACT-Extension-Methods\ACT-Extension-Methods\ACTExtLib\README.md" target="\README.md" />
     <file src="D:\IVolt_Development\__GITHUB\ACT-Extension-Methods\ACT-Extension-Methods\ACTExtLib\ACT_Common_Icon.png" target="\ACT_Common_Icon.png" />
   </files>
